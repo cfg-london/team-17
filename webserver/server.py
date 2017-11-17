@@ -1,4 +1,4 @@
-from flask import Flask,request
+from flask import Flask,request,render_template
 from admin import simple_page
 
 app = Flask(__name__)
@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.register_blueprint(simple_page)
 @app.route("/")
 def hello():
-    return "Hello World!"
+    return render_template("index.html")
 @app.route("/home")
 def login():
     age = int(request.args.get('age'))
