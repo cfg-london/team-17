@@ -9,10 +9,11 @@ def hello():
     return render_template("index.html")
 @app.route("/home")
 def login():
-    age = int(request.args.get('age'))
-    if age is None:
+    try:
+        age = int(request.args.get('age'))
+    except TypeError as e:
         return "general"
-    elif age <11:
+    if age <11:
         return "Under 11"
     elif age >= 11 and age <= 14:
         return "11 to 14"
