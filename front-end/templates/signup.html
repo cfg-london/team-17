@@ -1,23 +1,51 @@
 <main class="templateContainer" style="text-align: center; margin-top: 50px;">
-<h1 style="padding-bottom: 40px;">Welcome to Click sergent</h1>
-  <form class="userForm">
+<h1 style="padding-bottom: 40px;">Welcome to Clic Sargent</h1>
+  <form class="userForm" action = "/signup" method = "post">
     <div class="form-group">
-      <label for="exampleInputEmail1">What is your name?</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <label for="exampleInputEmail1">What is your full name?</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Please select a username</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Please select a password</label>
+      <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Password">
     </div>
     <div class="form-group">
       <label for="exampleFormControlSelect1">What is your age range?</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>0-11</option>
-        <option>12-15</option>
-        <option>16-18</option>
-        <option>19+</option>
+      <select class="form-control">
+        <option value="1">0-11</option>
+        <option value="2">12-15</option>
+        <option value="3">16-18</option>
+        <option value="4">19+</option>
       </select>
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">What type of cancer do you have?</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <select class="form-control">
+        <option value="Lung">Lung</option>
+        <option value="Brain">Brain</option>
+        <option value="Leukimia">Leukimia</option>
+        <option value="Breast">Breast</option>
+        <option value="Skin">Skin</option>
+        <option value="Other">Other</option>
+      </select>
     </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">At what stage of the journey against cancer are you?</label>
+      <select class="form-control">
+        <option value="Diagnosis">Diagnosis</option>
+        <option value="Treatment-1">Treatment-Surgery</option>
+        <option value="Treatment-2">Treatment-Chemotherapy</option>
+        <option value="Treatment-3">Treatment-Radiotherapy</option>
+        <option value="Post Treatment">Post Treatment</option>
+        <option value="Grief Support">Grief Support</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
     <a href="/#community"><button type="submit" class="btn btn-primary">Submit</button></a>
   </form>
 </main>
