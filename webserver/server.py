@@ -18,18 +18,21 @@ cursor = conn.cursor()
 
 
 
-cursor.execute("SELECT username FROM adminTable WHERE adminID=1")
+cursor.execute("SELECT * FROM adminTable WHERE adminID=1")
 
 username = cursor.fetchall()
 
 userpasswords = []
 
+
+
 @app.route("/")
 def hello():
-    users = json.dumps(username)
+    users = username
     print(users)
-    for user in users[0]:
-        userpasswords.append(user)
+    for i in range(0,len(users)):
+
+            userpasswords.append([users[i][0],users[i][1].encode('utf-8'),users[i][2].encode('utf-8')])
 
     return str(userpasswords)
 
