@@ -69,66 +69,46 @@ display: inline;
     <div data-role="page">
 
 
-  <div data-role="main" class="ui-content">
+    <div class="card" style="width: 320px;">
+  <img class="card-img-top" src="woman.jpg" alt="Card image cap" width='320px' height='270px'>
+  <div class="card-body">
+    <h4 class="card-title">Jane Doe</h4>
+    <p class="card-text">Just got the results from the scan, looking good!.</p>
+    <div style="width:95%; text-align:right;">
+      <div color="pink;">
+    <span class="oi oi-heart" title="icon heart" ></span>
+   </div>
+     </div>
+   </div>
+    <p> </p>
 
-
-    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
-      <form method="post" id = "ppp"action="/insert">
-        <div>
-          <h3>Share your Experiences</h3>
-          <label for="usrnm" class="ui-hidden-accessible">Nickname</label>
-          <input type="text" name="user" id="usrnm" placeholder="Nickname">
-          <label for="age" class="ui-hidden-accessible">Password:</label>
-          <input type="text" name="age" id="age" placeholder="age">
-          <label for="experience" class="ui-hidden-accessible">experience</label>
-          <input type="text" name="experience" id="exp" placeholder="Share your experience here" style="height: 200px">
-          <input type = "submit" value = " Submit "/><br />
-        </div>
-      </form>
-    </div>
-  </div>
-
-
-</div>
-<script>
-  $(function(){
-     $('ppp').on('submit', function(e){
-          e.preventDefault();
-          $.ajax({
-              url: "/send",
-              type: "POST",
-              data: $("ppp").serialize(),
-              success: function(data){
-                  alert("Successfully submitted.")
-              }
-          });
-     }); 
-  });
-</script>
-
-<p></p>
-<center>
-    <div class="card" style="width: 500px">
-      <h3 class="card-header">Today I begin chemo</h3>
+    <div class="card" style="width: 320px;">
       <div class="card-block">
-        <h4 class="card-title">Chemo</h4>
-        <p class="card-text">Today I begin the treatment</p>
-        <a href="#" class="btn btn-primary">Read more</a>
-      </center>
-      </div>
-    </div>
-    <center>
-      <div class="card" style="width: 500px">
-        <h3 class="card-header">Featured</h3>
-        <div class="card-block">
-          <h4 class="card-title">Special title treatment</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </center>
+        <h4 class="card-title">Code 4 good</h4>
+        <h6 class="card-subtitle mb-2 text-muted">hello</h6>
+        <p class="card-text">It's been a great day!.</p>
+        <div style="width:100%; text-align:right;">
+          <span class="oi oi-heart" title="icon heart" style="" ></span>
+        </div>
+          </div>
+            </div>
 
+   <p> </p>
+        <div class="card" style="width: 320px;">
+          <video width="320" height="240" autoplay>
+      <source src="movie.mp4" type="video/mp4">
+      <source src="movie.ogg" type="video/ogg">
+    Your browser does not support the video tag.
+    </video>
+      <div class="card-body">
+        <h4 class="card-title">Jane Doe</h4>
+        <p class="card-text">Just got the results from the scan, looking good!.</p>
+        <div style="width:95%; text-align:right;">
+        <span class="oi oi-heart" title="icon heart" ></span>
+          </div>
+            </div>
+          </div>
 
-  </body>
-</html>
 
       </div>
     </div>
