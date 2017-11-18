@@ -1,19 +1,49 @@
-from flask import Flask,request,render_template
+from flask import Flask, render_template, request
 from admin import simple_page
+from flaskext.mysql import MySQL
+from flask import jsonify
+import  json
 
+mysql = MySQL()
 app = Flask(__name__)
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
+app.config['MYSQL_DATABASE_DB'] = 'clic'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+mysql.init_app(app)
 
-app.register_blueprint(simple_page)
+conn = mysql.connect()
+
+cursor = conn.cursor()
+
+
+
+cursor.execute("SELECT username FROM adminTable WHERE adminID=1")
+
+username = cursor.fetchall()
+
+userpasswords = []
+
 @app.route("/")
 def hello():
-    return render_template("index.html")
+    users = json.dumps(username)
+    print(users)
+    for user in users[0]:
+        userpasswords.append(user)
+
+    return str(userpasswords)
+
+
+@app.route("/start")
+def start():
+    return render_template("start.html")
+
 @app.route("/home")
 def login():
-    try:
-        age = int(request.args.get('age'))
-    except TypeError as e:
+    age = int(request.args.get('age'))
+    if age is None:
         return "general"
-    if age <11:
+    elif age <11:
         return "Under 11"
     elif age >= 11 and age <= 14:
         return "11 to 14"
@@ -26,3 +56,6 @@ def login():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
+
+
+
