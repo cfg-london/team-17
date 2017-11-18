@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--using bootstrap 3.3.7-->
+<html>
+<head>
+    <link href="./css/stylesheet.css" rel="stylesheet">
+
+	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.4.8/angular-route.js"></script>
+	<script src="js/main.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	
+
+</head>
+<body ng-app="myApp">
+<div class="topBar">
+	<nav class="navbar navbar-toggleable-md">
+		<div class="collapse navbar-collapse" >
+			<div class="col-md-3"><img style="width: 100%;" src="./imgs/logo.png"></div>
+			<a class="topBarTitle" href="#/home"><div class="col-md-2">Home</div></a>
+			<a class="topBarTitle" href="#/community"><div class="col-md-2">Community</div></a>
+			<a class="topBarTitle" href="#/profile"><div class="col-md-2">Profile</div></a>
+			<div class="col-md-3"></div>
+		</div>
+	</nav>
+</div>
+<div ng-view>
+</div>
+</body>
+</html>

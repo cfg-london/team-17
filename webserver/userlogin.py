@@ -22,7 +22,7 @@ cursor.execute("SELECT * FROM userTable")
 username = cursor.fetchall()
 userpasswords = []
 
-user_login_blueprint = Blueprint('user_login_blueprint', __name__, template_folder='templates')
+user_login_blueprint = Blueprint('user_login_blueprint', __name__, template_folder='./templates/templates')
 @user_login_blueprint.route('/user/login', methods=['POST'])
 def userLogin():
 
